@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Game start!!!</title>
+    <link href="assets/styles/modal.css" rel="stylesheet" />
+    <link href="assets/styles/timer.css" rel="stylesheet" />
+    <style>
+        /* Prevent the text contents of draggable elements from being selectable. */
+        [draggable] {
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            /* Required to make elements draggable in old WebKit */
+            -khtml-user-drag: element;
+            -webkit-user-drag: element;
+        }
+
+        .column {
+            height: 150px;
+            width: 150px;
+            float: left;
+            border: 2px solid #666666;
+            background-color: #ccc;
+            margin-right: 5px;
+            -webkit-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 3px #000;
+            -ms-box-shadow: inset 0 0 3px #000;
+            box-shadow: inset 0 0 3px #000;
+            text-align: center;
+            cursor: move;
+        }
+
+            .column header {
+                color: #fff;
+                text-shadow: #000 0 1px;
+                box-shadow: 5px;
+                padding: 5px;
+                background: -moz-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+                background: -webkit-gradient(linear, left top, right top, color-stop(0, rgb(0,0,0)), color-stop(0.50, rgb(79,79,79)), color-stop(1, rgb(21,21,21)));
+                background: -webkit-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+                background: -ms-linear-gradient(left center, rgb(0,0,0), rgb(79,79,79), rgb(21,21,21));
+                border-bottom: 1px solid #ddd;
+                -webkit-border-top-left-radius: 10px;
+                -moz-border-radius-topleft: 10px;
+                -ms-border-radius-topleft: 10px;
+                border-top-left-radius: 10px;
+                -webkit-border-top-right-radius: 10px;
+                -ms-border-top-right-radius: 10px;
+                -moz-border-radius-topright: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .column.over {
+                border: 2px dashed #000;
+            }
+            #word-line{
+                border-bottom:  2px dashed #000;
+            }
+            .disappear{
+                display:none;
+            }
+    </style>
+</head>
+<body>
+    <!-- The Modal -->
+    <div id="startGameModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Are you ready?</h2>
+            </div>
+            <div class="modal-body">
+                <p>Form the phrase "It' all about the flow" on the line</p>
+                <button id="startGameBtn">Start your game!!!</button>
+            </div>
+        </div>
+    </div>
+    <!-- The Save Game Modal -->
+    <div id="saveGameModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Congratulation!!!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Yeah you did it!!!</p>
+                <p><input type="text" placeholder="Tell me your name!!!" /></p>
+                <button id="saveGameBtn">Save &and; show me my rank</button><button id="restartGame">Retry</button>
+            </div>
+        </div>
+    </div>
+    <!-- Lets make a simple stopwatch using CSS3 -->
+    <!-- Time for the markup -->
+    <!-- The core logic is a simple div containing numbers being moved
+    using keyframe animations. The numbers have space between them so that they
+    can be aligned vertically easily by reducing the container width. Lets
+    wrap up the 'numbers' in a cell to display only 1 digit-->
+    <!-- We will replicate the digits now -->
+    <div class="container">
+        <!-- time to add the controls -->
+        <input id="start" name="controls timer" class="timber-btn" type="radio" />
+        <input id="stop" name="controls timer" class="timber-btn" type="radio" />
+        <input id="reset" name="controls timer" class="timber-btn" type="radio" />
+        <div class="timer">
+            <div class="cell">
+                <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+                <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+                <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+            </div>
+            <div class="cell">
+                <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+                <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+            </div>
+            <div class="cell">
+                <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+                <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+                <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+                <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+        </div>
+        <!-- Lables for the controls -->
+        <div id="timer_controls" class="timber-btn">
+            <label for="start">Start</label>
+            <label for="stop">Stop</label>
+            <label for="reset">Reset</label>
+        </div>
+    </div>
+    <div id="word-line" style="height:200px">
+        <div class="column disappear" draggable="true"></div>
+        <div class="column disappear" draggable="true"></div>
+        <div class="column disappear" draggable="true"></div>
+        <div class="column disappear" draggable="true"></div>
+        <div class="column disappear" draggable="true"></div>
+    </div>
+    <div id="game-board">
+        <div class="column" draggable="true"><header>It's</header></div>
+        <div class="column" draggable="true"><header>all</header></div>
+        <div class="column" draggable="true"><header>about</header></div>
+        <div class="column" draggable="true"><header>the</header></div>
+        <div class="column" draggable="true"><header>flow</header></div>
+    </div>
+    <script src="assets/modules/timer.js"></script>
+    <script src="assets/modules/startgamemodal.js"></script>
+    <script src="assets/modules/resultgamemodal.js"></script>
+    <script src="assets/modules/word.js"></script>
+    <script src="assets/modules/textline.js"></script>
+    <script src="assets/modules/bootstrap.js"></script>
+</body>
+</html>
