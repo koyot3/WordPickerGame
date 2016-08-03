@@ -1,5 +1,5 @@
 ﻿var correctAnswer = 0;
-var emptySlots = document.querySelectorAll('#word-line .column');
+var emptySlots = document.querySelectorAll('#word-line .word');
 
 function lineHandleDragOver(e) {
     if (e.preventDefault) {

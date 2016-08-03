@@ -19,3 +19,7 @@ var restartGameBtn = document.getElementById('restartGame');
 restartGameBtn.onclick = function () {
     startGame();
 }
+
+function submitResult() {
+
+}

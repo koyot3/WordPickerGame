@@ -16,8 +16,7 @@
             -webkit-user-drag: element;
         }
 
-        .column {
-            height: 150px;
+        .word {
             width: 150px;
             float: left;
             border: 2px solid #666666;
@@ -34,7 +33,7 @@
             cursor: move;
         }
 
-            .column header {
+            .word header {
                 color: #fff;
                 text-shadow: #000 0 1px;
                 box-shadow: 5px;
@@ -54,7 +53,7 @@
                 border-top-right-radius: 10px;
             }
 
-            .column.over {
+            .word.over {
                 border: 2px dashed #000;
             }
             #word-line{
@@ -64,6 +63,7 @@
                 display:none;
             }
     </style>
+    <link href="assets/styles/main.css" rel="stylesheet" />
 </head>
 <body>
     <!-- The Modal -->
@@ -93,13 +93,11 @@
             </div>
         </div>
     </div>
-    <!-- Lets make a simple stopwatch using CSS3 -->
-    <!-- Time for the markup -->
+    <!-- StopWatch -->
     <!-- The core logic is a simple div containing numbers being moved
     using keyframe animations. The numbers have space between them so that they
     can be aligned vertically easily by reducing the container width. Lets
     wrap up the 'numbers' in a cell to display only 1 digit-->
-    <!-- We will replicate the digits now -->
     <div class="container">
         <!-- time to add the controls -->
         <input id="start" name="controls timer" class="timber-btn" type="radio" />
@@ -144,20 +142,23 @@
             <label for="reset">Reset</label>
         </div>
     </div>
-    <div id="word-line" style="height:200px">
-        <div class="column disappear" draggable="true"></div>
-        <div class="column disappear" draggable="true"></div>
-        <div class="column disappear" draggable="true"></div>
-        <div class="column disappear" draggable="true"></div>
-        <div class="column disappear" draggable="true"></div>
+    <div id="word-line" style="height:155px;position:absolute;bottom:20px;width:100%;">
+        <div class="word disappear"></div>
+        <div class="word disappear"></div>
+        <div class="word disappear"></div>
+        <div class="word disappear"></div>
+        <div class="word disappear"></div>
     </div>
     <div id="game-board">
-        <div class="column" draggable="true"><header>It's</header></div>
-        <div class="column" draggable="true"><header>all</header></div>
-        <div class="column" draggable="true"><header>about</header></div>
-        <div class="column" draggable="true"><header>the</header></div>
-        <div class="column" draggable="true"><header>flow</header></div>
+        <div class="word" draggable="true"><header>It's</header></div>
+        <div class="word" draggable="true"><header>all</header></div>
+        <div class="word" draggable="true"><header>about</header></div>
+        <div class="word" draggable="true"><header>the</header></div>
+        <div class="word" draggable="true"><header>flow</header></div>
     </div>
+    <!---Common Library-->
+    <script src="assets/common/http.js"></script>
+    <!---Modules-->
     <script src="assets/modules/timer.js"></script>
     <script src="assets/modules/startgamemodal.js"></script>
     <script src="assets/modules/resultgamemodal.js"></script>

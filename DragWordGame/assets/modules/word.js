@@ -49,7 +49,7 @@ function handleDragEnd(e) {
     });
 }
 
-var words = document.querySelectorAll('#game-board .column');
+var words = document.querySelectorAll('#game-board .word');
 
 [].forEach.call(words, function (word) {
     word.addEventListener('dragstart', handleDragStart, false);
@@ -64,4 +64,14 @@ function resetWords() {
     [].forEach.call(words, function (word) {
         word.classList.remove('disappear');
     });
+    shuffleWords()
+}
+
+function shuffleWords() {
+    // get the board
+    var board = document.querySelector('#game-board');
+    for (var i = board.children.length; i >= 0; i--) {
+        // every loop I'm shuffling
+        board.appendChild(board.children[Math.random() * i | 0]);
+    }
 }
