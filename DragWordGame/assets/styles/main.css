@@ -1,6 +1,21 @@
-﻿#game-board, #word-line {
+﻿body {
+    background-image: url('../images/pokemon-background.jpg');
+}
+
+#game-board, #word-line {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+#pikachu {
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+#pikachu img {
+    float: right;
 }

@@ -1,13 +1,22 @@
-﻿using System.Web.Http;
+﻿using DragWordGame.Core.ApplicationService.Interfaces;
+using DragWordGame.Core.Domain.Models;
+using System;
+using System.Web.Http;
 
 namespace DragWordGame.Controllers
 {
     public class GameController : ApiController
     {
-        [HttpGet]
-        public bool SaveGame(string userName)
+        private IGameService _gameService = null;
+        public GameController(IGameService gameService)
         {
-            return true;
+            _gameService = gameService;
+        }
+
+        [HttpPost]
+        public Rank SaveGame(string player, double timeRange, DateTime playedTime)
+        {
+            return _gameService.SaveGame(player, timeRange, playedTime);
         }
     }
 }

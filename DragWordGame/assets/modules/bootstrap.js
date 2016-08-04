@@ -11,5 +11,6 @@ function startGame() {
         hideModal();
         hideSaveModal();
         pressButton(start);
+        resetClock();
     }, 100);
 }

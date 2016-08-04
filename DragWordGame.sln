@@ -5,6 +5,18 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragWordGame", "DragWordGame\DragWordGame.csproj", "{2DFBB41A-0FC9-4514-8CEA-AA2FFCCF9296}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Core", "01.Core", "{4CC608F4-ED4A-4C5E-8158-F87D03B338CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Service", "03.Service", "{CCC549B1-79C6-4F6F-BB72-1DC51517F33C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Clients", "05.Clients", "{099DC293-28CF-4F40-8C9F-E9A3D506729C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragWordGame.Core.ApplicationService", "DragWordGame.Core.ApplicationService\DragWordGame.Core.ApplicationService.csproj", "{C5E8279C-EC28-4380-BDB9-A7B3C3743F11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragWordGame.Core.Domain", "DragWordGame.Core.Domain\DragWordGame.Core.Domain.csproj", "{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragWordGame.Service.ApplicationService", "DragWordGame.Service.ApplicationService\DragWordGame.Service.ApplicationService.csproj", "{169EC863-B7C9-4042-9EE6-2D47BD1F5909}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +27,26 @@ Global
 		{2DFBB41A-0FC9-4514-8CEA-AA2FFCCF9296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DFBB41A-0FC9-4514-8CEA-AA2FFCCF9296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DFBB41A-0FC9-4514-8CEA-AA2FFCCF9296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E8279C-EC28-4380-BDB9-A7B3C3743F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E8279C-EC28-4380-BDB9-A7B3C3743F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E8279C-EC28-4380-BDB9-A7B3C3743F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E8279C-EC28-4380-BDB9-A7B3C3743F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169EC863-B7C9-4042-9EE6-2D47BD1F5909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169EC863-B7C9-4042-9EE6-2D47BD1F5909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169EC863-B7C9-4042-9EE6-2D47BD1F5909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169EC863-B7C9-4042-9EE6-2D47BD1F5909}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DFBB41A-0FC9-4514-8CEA-AA2FFCCF9296} = {099DC293-28CF-4F40-8C9F-E9A3D506729C}
+		{C5E8279C-EC28-4380-BDB9-A7B3C3743F11} = {4CC608F4-ED4A-4C5E-8158-F87D03B338CE}
+		{53F1EEA3-06DF-4F1D-9E83-C9A02EC1C455} = {4CC608F4-ED4A-4C5E-8158-F87D03B338CE}
+		{169EC863-B7C9-4042-9EE6-2D47BD1F5909} = {CCC549B1-79C6-4F6F-BB72-1DC51517F33C}
 	EndGlobalSection
 EndGlobal

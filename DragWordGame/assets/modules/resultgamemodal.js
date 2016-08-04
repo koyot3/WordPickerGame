@@ -2,7 +2,8 @@
 var saveGameModal = document.getElementById('saveGameModal');
 
 // When the user clicks the button, open the modal
-function displaySaveModal() {
+function displaySaveModal(record) {
+    alert(record);
     saveGameModal.style.display = "block";
 }
 

@@ -31,7 +31,10 @@ function lineHandleDrop(e) {
     if (correctAnswer == words.length) {
         // If the phrase is complete show result modal
         pressButton(stop);
-        displaySaveModal();
+        // get clock data
+        timer.stop();
+        //
+        displaySaveModal(timer.time());
     }
 }
 

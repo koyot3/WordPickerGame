@@ -1,3 +1,9 @@
 /packages
 /DragWordGame/bin
 /DragWordGame/obj
+/DragWordGame.Core.ApplicationService/obj
+/DragWordGame.Core.ApplicationService/bin
+/DragWordGame.Core.Domain/obj
+/DragWordGame.Core.Domain/bin
+/DragWordGame.Service.ApplicationService/obj
+/DragWordGame.Service.ApplicationService/bin

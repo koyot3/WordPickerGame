@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.1.0\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -81,19 +89,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\scripts\bootstrap.js" />
-    <Content Include="assets\scripts\dragcontrol.js" />
-    <Content Include="assets\scripts\game.js" />
-    <Content Include="assets\scripts\result.js" />
-    <Content Include="assets\scripts\startbutton.js" />
-    <Content Include="assets\scripts\timer.js" />
+    <Content Include="assets\common\http.js" />
+    <Content Include="assets\images\pikachu-on-playing.gif" />
+    <Content Include="assets\images\pikachu-smile.gif" />
+    <Content Include="assets\images\pokemon-background.jpg" />
+    <Content Include="assets\modules\bootstrap.js" />
+    <Content Include="assets\modules\resultgamemodal.js" />
+    <Content Include="assets\modules\startgamemodal.js" />
+    <Content Include="assets\modules\textline.js" />
+    <Content Include="assets\modules\timer.js" />
+    <Content Include="assets\modules\word.js" />
+    <Content Include="assets\styles\main.css" />
     <Content Include="assets\styles\modal.css" />
     <Content Include="assets\styles\timer.css" />
+    <Content Include="assets\styles\word.css" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\AutofacRegister\BusinessLogicRegistry.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Global.asax.cs">
@@ -103,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App_Data\ranking.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,8 +128,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DragWordGame.Core.ApplicationService\DragWordGame.Core.ApplicationService.csproj">
+      <Project>{c5e8279c-ec28-4380-bdb9-a7b3c3743f11}</Project>
+      <Name>DragWordGame.Core.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DragWordGame.Core.Domain\DragWordGame.Core.Domain.csproj">
+      <Project>{53f1eea3-06df-4f1d-9e83-c9a02ec1c455}</Project>
+      <Name>DragWordGame.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DragWordGame.Service.ApplicationService\DragWordGame.Service.ApplicationService.csproj">
+      <Project>{169ec863-b7c9-4042-9ee6-2d47bd1f5909}</Project>
+      <Name>DragWordGame.Service.ApplicationService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
