@@ -1,4 +1,5 @@
 ﻿var HttpClient = function () {
+
     this.get = function (aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
         anHttpRequest.onreadystatechange = function () {
@@ -9,6 +10,7 @@
         anHttpRequest.open("GET", aUrl, true);
         anHttpRequest.send(null);
     }
+
     this.post = function (data, aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
         anHttpRequest.onreadystatechange = function () {
@@ -17,6 +19,7 @@
         }
 
         anHttpRequest.open("POST", aUrl, true);
+        anHttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         anHttpRequest.send(data);
     }
 }

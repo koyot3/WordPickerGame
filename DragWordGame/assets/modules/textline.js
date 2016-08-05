@@ -33,7 +33,7 @@ function lineHandleDrop(e) {
         pressButton(stop);
         // get clock data
         timer.stop();
-        //
+        // 
         displaySaveModal(timer.time());
     }
 }

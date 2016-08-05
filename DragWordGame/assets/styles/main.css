@@ -1,5 +1,6 @@
 ﻿body {
     background-image: url('../images/pokemon-background.jpg');
+    background-size: cover;
 }
 
 #game-board, #word-line {

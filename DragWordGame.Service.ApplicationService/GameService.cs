@@ -1,17 +1,26 @@
 ﻿using DragWordGame.Core.ApplicationService.Interfaces;
 using DragWordGame.Core.Domain.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace DragWordGame.Service.ApplicationService.Services
 {
     public class GameService : IGameService
     {
+        public GameService()
+        {
+
+        }
+
         public Rank SaveGame(string playerName, double timeRange, DateTime playedTime)
         {
-            using (StreamReader r = new StreamReader(@"App_Data/ranking.json"))
+            string AssemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location).ToString();
+
+            using (StreamReader r = new StreamReader(AssemblyPath + "/ranking.json"))
             {
                 string json = r.ReadToEnd();
                 var items = JsonConvert.DeserializeObject<List<Rank>>(json);
@@ -27,5 +36,24 @@ namespace DragWordGame.Service.ApplicationService.Services
                 return result;
             }
         }
+
+        private void WriteToFile(List<Rank> input)
+        {
+            JArray a = new JArray(
+                input.Select(p => new JObject {
+                    {"Player", p.Player },
+                    {"TimeRange", p.TimeRange },
+                    {"PlayedTime", p.PlayedTime }
+                })
+                );
+            // write JSON directly to a file
+            using (StreamWriter file = File.CreateText(@"App_Data/ranking.json"))
+            using (JsonTextWriter writer = new JsonTextWriter(file))
+            {
+                a.WriteTo(writer);
+            }
+        }
+
+
     }
 }

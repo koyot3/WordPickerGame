@@ -10,10 +10,6 @@ function displaySaveModal(record) {
 function hideSaveModal() {
     saveGameModal.style.display = "none";
 }
-// Click save button
-//saveGameModal.onclick = function () {
-//    startGame();
-//}
 
 var restartGameBtn = document.getElementById('restartGame');
 // click retry
@@ -21,6 +17,14 @@ restartGameBtn.onclick = function () {
     startGame();
 }
 
-function submitResult() {
+// Get the modal
+var saveGameBtn = document.getElementById('saveGameBtn');
+
+saveGameBtn.onclick = function () {
+    var newRank = { player: 'Hoang', timeRange: timer.time(), playedTime: '2016-08-04' }
+    var httpRequest = new HttpClient();
+    httpRequest.post(newRank, '/api/game/savegame?player=hoang&timeRange=' + timer.time() + '&playedTime=2016-08-04', function (response) {
+        console.log(response);
+    });
 
 }
