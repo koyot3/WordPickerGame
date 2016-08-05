@@ -30,8 +30,8 @@
             </div>
             <div class="modal-body">
                 <p>Yeah you did it!!!</p>
-                <p><input type="text" placeholder="Tell me your name!!!" /></p>
-                <button id="saveGameBtn">Save &and; show me my rank</button><button id="restartGame">Retry</button>
+                <p><input type="text" placeholder="Tell me your name!!!" id="playerField" /></p>
+                <button id="saveGameBtn">Save &amp; show me my rank</button><button id="restartGame">Retry</button>
             </div>
         </div>
     </div>
@@ -92,11 +92,11 @@
         <div class="word disappear"></div>
     </div>
     <div id="game-board">
-        <div class="word" draggable="true"><header>It's</header></div>
-        <div class="word" draggable="true"><header>all</header></div>
-        <div class="word" draggable="true"><header>about</header></div>
-        <div class="word" draggable="true"><header>the</header></div>
-        <div class="word" draggable="true"><header>flow</header></div>
+        <div class="word" draggable="true" data-order=1><header>It's</header></div>
+        <div class="word" draggable="true" data-order=2><header>all</header></div>
+        <div class="word" draggable="true" data-order=3><header>about</header></div>
+        <div class="word" draggable="true" data-order=4><header>the</header></div>
+        <div class="word" draggable="true" data-order=5><header>flow</header></div>
     </div>
     <div id="pikachu">
         <img src="assets/images/pikachu-on-playing.gif" />

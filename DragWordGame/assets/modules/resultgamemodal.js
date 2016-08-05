@@ -1,17 +1,21 @@
-﻿// Get the modal
+﻿// Saving Game Modal
 var saveGameModal = document.getElementById('saveGameModal');
 
-// When the user clicks the button, open the modal
+// Player Name
+var playerField = document.getElementById('playerField');
+
+// When the user finishes his/her game, the Result Modal displays
 function displaySaveModal(record) {
-    alert(record);
     saveGameModal.style.display = "block";
 }
 
+// When the user finishes his/her game, the Result Modal displays
 function hideSaveModal() {
     saveGameModal.style.display = "none";
 }
 
 var restartGameBtn = document.getElementById('restartGame');
+
 // click retry
 restartGameBtn.onclick = function () {
     startGame();
@@ -20,11 +24,42 @@ restartGameBtn.onclick = function () {
 // Get the modal
 var saveGameBtn = document.getElementById('saveGameBtn');
 
+// Click Save
 saveGameBtn.onclick = function () {
-    var newRank = { player: 'Hoang', timeRange: timer.time(), playedTime: '2016-08-04' }
-    var httpRequest = new HttpClient();
-    httpRequest.post(newRank, '/api/game/savegame?player=hoang&timeRange=' + timer.time() + '&playedTime=2016-08-04', function (response) {
-        console.log(response);
-    });
+    if (playerField.value != '') {
+        var newRank = { player: playerField.value, timeRange: timer.time(), playedTime: new Date().toString() }
+        var httpRequest = new HttpClient();
+        httpRequest.post(newRank, '/api/game/savegame?player=' + playerField.value + '&timeRange=' + timer.time() + '&playedTime=' + new Date().toJSON(), function (response) {
+            var result = JSON.parse(response);
+            if (result.MyRank != undefined) {
+                // Save game successfully
+                // 1. Hide Saving Modal
+                hideSaveModal();
+                // 2. Clear the form
+                clearSavedGameForm();
+                // 3. Display Start Game
+                displayModal();
+                // 4. Alert the result 
+                alert('You are at Rank ' + result.MyRank.RankNo + '. Are you genius?\n' + populateTopTen(result.TopTenRanks));
+            } else {
+                // Oops there's something wrong
+                alert('There\'s something wrong, let\'s have a one more round!');
+            }
+        });
+    } else {
+        alert('Everyone can\'t wait for knowing who you are!!!');
+    }
+}
 
+function clearSavedGameForm() {
+    playerField.value = "";
+}
+
+function populateTopTen(topTenRanks) {
+    var result = '';
+    var rankNo = 0;
+    [].forEach.call(topTenRanks, function (rank) {
+        result = result.concat(++rankNo, '. ', rank.Player, ' at ', rank.TimeRange, '\n');
+    });
+    return result;
 }

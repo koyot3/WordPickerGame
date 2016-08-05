@@ -116,6 +116,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\SaveGameResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -127,9 +128,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DragWordGame.Core.ApplicationService\DragWordGame.Core.ApplicationService.csproj">
       <Project>{c5e8279c-ec28-4380-bdb9-a7b3c3743f11}</Project>

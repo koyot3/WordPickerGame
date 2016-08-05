@@ -1,0 +1,4 @@
+D:\H.NguyenM-Hatarakikubun\Workspace\WordPickerGame\DragWordGame.Core.Utils\bin\Debug\DragWordGame.Core.Utils.dll
+D:\H.NguyenM-Hatarakikubun\Workspace\WordPickerGame\DragWordGame.Core.Utils\bin\Debug\DragWordGame.Core.Utils.pdb
+D:\H.NguyenM-Hatarakikubun\Workspace\WordPickerGame\DragWordGame.Core.Utils\obj\Debug\DragWordGame.Core.Utils.dll
+D:\H.NguyenM-Hatarakikubun\Workspace\WordPickerGame\DragWordGame.Core.Utils\obj\Debug\DragWordGame.Core.Utils.pdb

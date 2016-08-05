@@ -1,6 +1,7 @@
 ﻿var correctAnswer = 0;
 var emptySlots = document.querySelectorAll('#word-line .word');
 
+// handler for drag something and hover over line
 function lineHandleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault(); // Necessary. Allows us to drop.
@@ -11,13 +12,13 @@ function lineHandleDragOver(e) {
     return false;
 }
 
+// handler for drag something and drop into line
 function lineHandleDragEnter(e) {
-    // this / e.target is the current hover target.
     this.classList.add('right');
 }
 
 function lineHandleDrop(e) {
-    if (correctAnswer < words.length) {
+    if (correctAnswer < words.length && isValidWord(dragElement)) {
         // Append new  text to line
         emptySlots[correctAnswer].innerHTML = e.dataTransfer.getData('text/html');
         emptySlots[correctAnswer].classList.remove('disappear');
@@ -29,13 +30,22 @@ function lineHandleDrop(e) {
     }
     
     if (correctAnswer == words.length) {
-        // If the phrase is complete show result modal
+        // Stop the clock
         pressButton(stop);
-        // get clock data
+        // Get clock data
         timer.stop();
-        // 
+        // Display save model
         displaySaveModal(timer.time());
     }
+}
+
+// Check is valid word drag into line?
+function isValidWord(dragElement) {
+    var result = false;
+    if (dragElement.getAttribute("data-order") == (correctAnswer + 1)) {
+        result = true
+    }
+    return result;
 }
 
 var line = document.getElementById('word-line');

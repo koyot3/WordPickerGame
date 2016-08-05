@@ -1,5 +1,5 @@
 ﻿using DragWordGame.Core.ApplicationService.Interfaces;
-using DragWordGame.Core.Domain.Models;
+using DragWordGame.ViewModels;
 using System;
 using System.Web.Http;
 
@@ -14,9 +14,12 @@ namespace DragWordGame.Controllers
         }
 
         [HttpPost]
-        public Rank SaveGame(string player, double timeRange, DateTime playedTime)
+        public SavedGameResponse SaveGame(string player, double timeRange, DateTime playedTime)
         {
-            return _gameService.SaveGame(player, timeRange, playedTime);
+            var result = new SavedGameResponse();
+            result.MyRank = _gameService.SaveGame(player, timeRange, playedTime);
+            result.TopTenRanks = _gameService.GetTopTen();
+            return result;
         }
     }
 }

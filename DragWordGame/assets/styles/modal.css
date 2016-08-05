@@ -14,6 +14,8 @@
             -webkit-animation-duration: 0.4s;
             animation-name: fadeIn;
             animation-duration: 0.4s;
+            font-family: cursive;
+            text-align: center;
         }
 
         /* Modal Content */
