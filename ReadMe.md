@@ -1,6 +1,6 @@
 # Drag Word Game
 
-- Candidate: Nguyen Manh Hoang 
+*Candidate:* Nguyen Manh Hoang  - nguyenmanhhoang91@gmail.com
 
 **Just a note:** As you can see in commit tab, there are 3 contributors but they're all only 1 person, it's me! 
 
@@ -12,7 +12,7 @@
 
 ### Tech
 
-Frontend:
+*Frontend:*
 
 ![Playground](frontend.png)
 
@@ -20,7 +20,7 @@ Frontend:
 * [Html5].
 * [Css3] - No css frameworks.
 
-Backend:
+*Backend:*
 
 ![Playground](backend.png)
 
