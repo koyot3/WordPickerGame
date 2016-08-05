@@ -9,11 +9,6 @@
 
 ![Playground](DragWordGame.gif)
 
-You can also:
-  - Import and save files from GitHub, Dropbox, Google Drive and One Drive
-  - Drag and drop files into Dillinger
-  - Export documents as Markdown, HTML and PDF
-
 ### Tech
 
 Frontend:
@@ -31,9 +26,7 @@ Backend:
 * [DI]: Autofac 
 * [JSon Parsing] - Newson Json
 
-
-
 ### Development
-[x] Drag word into line.
-[x] Show saving modal.
-[x] View current rank.
+- [x] Drag word into line.
+- [x] Show saving modal.
+- [x] View current rank.
