@@ -2,7 +2,7 @@
 
 - Candidate: Nguyen Manh Hoang 
 
-*Just a note:* As you can see in commit tab, there are 3 contributors but they're all only 1 person, it's me! 
+**Just a note:** As you can see in commit tab, there are 3 contributors but they're all only 1 person, it's me! 
 
   - Hoang Annadi is my alias in workstation.
   - koyot3 is me.
@@ -33,3 +33,4 @@ Backend:
 - [x] Drag word into line.
 - [x] Show saving modal.
 - [x] View current rank.
+- [x] Save result into json file.
