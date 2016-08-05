@@ -1,6 +1,7 @@
 # Drag Word Game
 
 - Candidate: Nguyen Manh Hoang 
+
 *Just a note:* As you can see in commit tab, there are 3 contributors but they're all only 1 person, it's me! 
 
   - Hoang Annadi is my alias in workstation.
@@ -12,6 +13,7 @@
 ### Tech
 
 Frontend:
+
 ![Playground](frontend.png)
 
 * [JavaScript] - Pure Js.
@@ -19,6 +21,7 @@ Frontend:
 * [Css3] - No css frameworks.
 
 Backend:
+
 ![Playground](backend.png)
 
 * [Architecture]: Domain Driven Design.
