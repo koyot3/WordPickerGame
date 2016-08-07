@@ -10,6 +10,8 @@
 
 ![Playground](DragWordGame.gif)
 
+*Live demo:* http://hoangmm.azurewebsites.net/
+
 ### Tech
 
 *Frontend:*
