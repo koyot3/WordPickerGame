@@ -38,5 +38,7 @@
 - [x] Show saving modal.
 - [x] Show ranking modal.
 - [x] Save result into json file.
+
 Further
+
 - [x] Play victory sound 
