@@ -93,14 +93,20 @@
     <Content Include="assets\images\pikachu-on-playing.gif" />
     <Content Include="assets\images\pikachu-smile.gif" />
     <Content Include="assets\images\pokemon-background.jpg" />
+    <Content Include="assets\media\pikachu_happy.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="assets\modules\bootstrap.js" />
+    <Content Include="assets\modules\rankingmodal.js" />
     <Content Include="assets\modules\resultgamemodal.js" />
     <Content Include="assets\modules\startgamemodal.js" />
     <Content Include="assets\modules\textline.js" />
     <Content Include="assets\modules\timer.js" />
     <Content Include="assets\modules\word.js" />
+    <Content Include="assets\styles\line.css" />
     <Content Include="assets\styles\main.css" />
     <Content Include="assets\styles\modal.css" />
+    <Content Include="assets\styles\table.css" />
     <Content Include="assets\styles\timer.css" />
     <Content Include="assets\styles\word.css" />
     <Content Include="Global.asax" />

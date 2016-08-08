@@ -3,6 +3,7 @@
 <head>
     <title>Game start!!!</title>
     <link href="assets/styles/modal.css" rel="stylesheet" />
+    <link href="assets/styles/table.css" rel="stylesheet" />
     <link href="assets/styles/timer.css" rel="stylesheet" />
     <link href="assets/styles/word.css" rel="stylesheet" />
     <link href="assets/styles/main.css" rel="stylesheet" />
@@ -33,6 +34,30 @@
                 <p>Yeah you did it!!!</p>
                 <p><input type="text" placeholder="Tell me your name!!!" id="playerField" /></p>
                 <button id="saveGameBtn">Save &amp; show me my rank</button><button id="restartGame">Retry</button>
+            </div>
+        </div>
+    </div>
+    <!-- Ranking Modal -->
+    <div id="rakingModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>You are genius!!!</h2>
+            </div>
+            <div class="modal-body">
+                <!--show your rank-->
+                <p id="result"></p>
+                <div>
+                    <table id="rank-table"  align="center">
+                        <thead>
+                        <th>Rank No.</th>
+                        <th>Player</th>
+                        <th>Finished at (s)</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <button id="restart-game-ranking">Retry</button>
             </div>
         </div>
     </div>
@@ -102,12 +127,17 @@
     <div id="pikachu">
         <img src="assets/images/pikachu-on-playing.gif" />
     </div>
+    <!--background audio-->
+    <div id="backgroundaudio">
+        <audio id="pikachu-happy-sound" src="assets/media/pikachu_happy.mp3"></audio>
+    </div>
     <!---Common Library-->
     <script src="assets/common/http.js"></script>
     <!---Modules-->
     <script src="assets/modules/timer.js"></script>
     <script src="assets/modules/startgamemodal.js"></script>
     <script src="assets/modules/resultgamemodal.js"></script>
+    <script src="assets/modules/rankingmodal.js"></script>
     <script src="assets/modules/word.js"></script>
     <script src="assets/modules/textline.js"></script>
     <script src="assets/modules/bootstrap.js"></script>

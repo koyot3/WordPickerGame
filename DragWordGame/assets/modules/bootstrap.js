@@ -11,6 +11,7 @@ function startGame() {
         resetLine();
         hideModal();
         hideSaveModal();
+        hideRankModal();
         pressButton(start);
         resetClock();
     }, 100);

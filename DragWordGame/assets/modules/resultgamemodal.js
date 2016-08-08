@@ -4,6 +4,9 @@ var saveGameModal = document.getElementById('saveGameModal');
 // Player Name
 var playerField = document.getElementById('playerField');
 
+// Pikachu sound
+var pikachuHappySound = document.getElementById('pikachu-happy-sound');
+
 // When the user finishes his/her game, the Result Modal displays
 function displaySaveModal(record) {
     saveGameModal.style.display = "block";
@@ -38,9 +41,11 @@ saveGameBtn.onclick = function () {
                 // 2. Clear the form
                 clearSavedGameForm();
                 // 3. Display Start Game
-                displayModal();
+                //displayModal();
                 // 4. Alert the result 
-                alert('You are at Rank ' + result.MyRank.RankNo + '. Are you genius?\n' + populateTopTen(result.TopTenRanks));
+                //alert('You are at Rank ' + result.MyRank.RankNo + '. Are you genius?\n' + populateTopTen(result.TopTenRanks));
+                pikachuHappySound.play();
+                displayRankModal(result);
             } else {
                 // Oops there's something wrong
                 alert('There\'s something wrong, let\'s have a one more round!');
