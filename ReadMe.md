@@ -7,7 +7,7 @@
   - Hoang Annadi is my alias in workstation.
   - koyot3 is me.
   - Tram Ngoc Minh is my friend account, I borrowed her laptop to finish this assignment and I forgot to set her credential login for my 2 first commits.
-
+  
 ![Playground](DragWordGame.gif)
 
 *Live demo:* http://hoangmm.azurewebsites.net/
@@ -32,7 +32,11 @@
 * [JSon Parsing] - Newson Json
 
 ### Development
+- [x] Randomize position of words
 - [x] Drag word into line.
+- [x] Change line color while hovering the word on 
 - [x] Show saving modal.
-- [x] View current rank.
+- [x] Show ranking modal.
 - [x] Save result into json file.
+Further
+- [x] Play victory sound 
