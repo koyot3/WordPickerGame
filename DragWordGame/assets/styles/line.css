@@ -1,0 +1,15 @@
+﻿#word-line {
+    height:155px;
+    position:absolute;
+    bottom:20px;
+    width:100%;
+}
+
+#word-line .word {
+    position: initial!important;
+    height:50px;
+}
+
+.correct-word {
+    border-bottom: 2px solid #4cff00;
+}

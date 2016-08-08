@@ -1,4 +1,5 @@
 ﻿displayModal();
+showHintWords();
 function startGame() {
     pressButton(reset);
 

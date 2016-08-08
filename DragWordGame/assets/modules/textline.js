@@ -8,6 +8,9 @@ function lineHandleDragOver(e) {
     }
 
     e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+    if (correctAnswer < words.length && isValidWord(dragElement, e)) {
+        e.currentTarget.classList.add('correct-word');
+    }
 
     return false;
 }
@@ -18,10 +21,11 @@ function lineHandleDragEnter(e) {
 }
 
 function lineHandleDrop(e) {
-    if (correctAnswer < words.length && isValidWord(dragElement)) {
+    // Remove correct state first 
+    e.currentTarget.classList.remove('correct-word');
+    if (correctAnswer < words.length && isValidWord(dragElement, e)) {
         // Append new  text to line
-        emptySlots[correctAnswer].innerHTML = e.dataTransfer.getData('text/html');
-        emptySlots[correctAnswer].classList.remove('disappear');
+        e.currentTarget.innerHTML = e.dataTransfer.getData('text/html');
         // dragElement is a word and makes it disappeared
         dragElement.classList.add('disappear');
         dragElement = null;
@@ -40,22 +44,30 @@ function lineHandleDrop(e) {
 }
 
 // Check is valid word drag into line?
-function isValidWord(dragElement) {
+function isValidWord(dragElement, emptySlot) {
     var result = false;
-    if (dragElement.getAttribute("data-order") == (correctAnswer + 1)) {
+    if (dragElement.getAttribute("data-order") == emptySlot.currentTarget.getAttribute("data-order")) {
         result = true
     }
     return result;
 }
 
 var line = document.getElementById('word-line');
-line.addEventListener('dragenter', lineHandleDragEnter, false);
-line.addEventListener('dragover', lineHandleDragOver, false);
-line.addEventListener('drop', lineHandleDrop, false);
+//line.addEventListener('dragenter', lineHandleDragEnter, false);
+//line.addEventListener('dragover', lineHandleDragOver, false);
+//line.addEventListener('drop', lineHandleDrop, false);
+function initDragEvent() {
+    [].forEach.call(emptySlots, function (slot) {
+        slot.addEventListener('dragenter', lineHandleDragEnter, false);
+        slot.addEventListener('dragover', lineHandleDragOver, false);
+        slot.addEventListener('drop', lineHandleDrop, false);
+    });
+}
+initDragEvent();
 
 function resetLine() {
     [].forEach.call(emptySlots, function (slot) {
         slot.innerHTML = null;
-        slot.classList.add('disappear');
+        //slot.classList.add('disappear');
     });
 }

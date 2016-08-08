@@ -12,16 +12,16 @@
 .word {
     width: 150px;
     float: left;
-    border: 2px solid #666666;
-    background-color: #ccc;
+    border-bottom: 2px solid #666666;
+    /* background-color: #ccc; */
     margin-right: 5px;
-    -webkit-border-radius: 10px;
+    /* -webkit-border-radius: 10px; */
     -ms-border-radius: 10px;
     -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 3px #000;
+    /* border-radius: 10px; */
+    /* -webkit-box-shadow: inset 0 0 3px #000; */
     -ms-box-shadow: inset 0 0 3px #000;
-    box-shadow: inset 0 0 3px #000;
+    /* box-shadow: inset 0 0 3px #D63636; */
     text-align: center;
     cursor: move;
     position: fixed;
@@ -50,10 +50,6 @@
     .word.over {
         border: 2px dashed #000;
     }
-
-#word-line {
-    border-bottom: 2px dashed #000;
-}
 
 .disappear {
     display: none;

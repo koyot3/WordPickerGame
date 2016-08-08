@@ -18,15 +18,6 @@ function handleDragOver(e) {
     return false;
 }
 
-function handleDragEnter(e) {
-    // this / e.target is the current hover target.
-    this.classList.add('over');
-}
-
-function handleDragLeave(e) {
-    this.classList.remove('over');  // this / e.target is previous target element.
-}
-
 function handleDrop(e) {
     // this / e.target is current target element.
 
@@ -41,10 +32,8 @@ function handleDrop(e) {
 
 function handleDragEnd(e) {
     // this/e.target is the source node.
-
     [].forEach.call(words, function (col) {
         col.classList.remove('over');
-
         col.style.opacity = '1';
     });
 }
@@ -53,10 +42,6 @@ var words = document.querySelectorAll('#game-board .word');
 
 [].forEach.call(words, function (word) {
     word.addEventListener('dragstart', handleDragStart, false);
-    word.addEventListener('dragenter', handleDragEnter, false);
-    //col.addEventListener('dragover', handleDragOver, false);
-    word.addEventListener('dragleave', handleDragLeave, false);
-    //col.addEventListener('drop', handleDrop, false);
     word.addEventListener('dragend', handleDragEnd, false);
 });
 
@@ -74,12 +59,27 @@ function shuffleWords() {
         // every loop I'm shuffling
         board.appendChild(board.children[Math.random() * i | 0]);
     }
-    //
+    // Randomize words
+    var w = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    var h = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
     [].forEach.call(words, function (word) {
         word.classList.remove('disappear');
-        var randomX = Math.floor((Math.random() * 1000) + 1) + 'px';
-        var randomY = Math.floor((Math.random() * 1000) + 1) + 'px';
-        word.style.top = randomX;
-        word.style.right = randomY;
+        word.style.removeProperty('position');
+        var randomX = (Math.random() * w) + 'px';
+        var randomY = (Math.random() * h) + 'px';
+        word.style.top = randomY;
+        word.style.right = randomX;
+    });
+}
+
+// 
+function showHintWords() {
+    [].forEach.call(words, function (word) {
+        word.style.position = 'initial';
     });
 }
