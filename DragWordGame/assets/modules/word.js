@@ -74,4 +74,12 @@ function shuffleWords() {
         // every loop I'm shuffling
         board.appendChild(board.children[Math.random() * i | 0]);
     }
+    //
+    [].forEach.call(words, function (word) {
+        word.classList.remove('disappear');
+        var randomX = Math.floor((Math.random() * 1000) + 1) + 'px';
+        var randomY = Math.floor((Math.random() * 1000) + 1) + 'px';
+        word.style.top = randomX;
+        word.style.right = randomY;
+    });
 }
